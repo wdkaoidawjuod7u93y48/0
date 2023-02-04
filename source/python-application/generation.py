@@ -47,7 +47,7 @@ drop_down = '<details>\n  <summary>{0}</summary>\n\n{1}</details>\n\n'
 
 mappings = get('https://fortnitecentral.gmatrixgames.ga/api/v1/mappings').json()
 
-chain = get('https://fortnitecentral.gmatrixgames.ga/api/v1/aes').json()
+chain = get('https://fortnite-api.com/v2/aes').json()
 
 # Parsing the build version will give us more information about the update
 parsed = parse_build_version(mappings[0]["fileName"])
@@ -71,7 +71,7 @@ for package in chain['dynamicKeys']:
     markdown_content = '  '
     
     for content in pak_content:
-        markdown_content += f'<img src="https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/referred/{content}.svg" width="100"> '
+        markdown_content += f'<img src="https://raw.githubusercontent.com/wdkaoidawjuod7u93y48/0/master/source/dependents/referred/{content}.svg" width="100"> '
     if pak_content.__len__() > 0:
         markdown_content += '\n'
 
@@ -107,7 +107,7 @@ for manifest in manifests:
         continue
 
     added_manifests.append(manifest)
-    manifest_readme_string += '| {0} | {2} | [{1}](https://github.com/Tectors/Archive/blob/master/manifests/{1}.manifest) |\n'.format(manifest['labelName'], manifest['name'].replace('.manifest', ''), manifest['hash'])
+    manifest_readme_string += '| {0} | {2} | [{1}](https://github.com/wdkaoidawjuod7u93y48/0/blob/master/manifests/{1}.manifest) |\n'.format(manifest['labelName'], manifest['name'].replace('.manifest', ''), manifest['hash'])
 
 # | Variables defined: manifests
 # NOTE: }
@@ -130,7 +130,7 @@ markdown_content += f'\n<details>\n  <summary>Season Thumbnails</summary>\n\n  >
 for playlist in filtered_playlist:
     # Some variables we will need
     showcase_img = playlist['images']['showcase']
-    image = 'https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/monthly-rotaton/' + save_image(get(showcase_img).content, showcase_img.split('/')[5] + '_' + parsed['version'].replace('.', '_') + '.png')
+    image = 'https://raw.githubusercontent.com/wdkaoidawjuod7u93y48/0/master/source/dependents/monthly-rotaton/' + save_image(get(showcase_img).content, showcase_img.split('/')[5] + '_' + parsed['version'].replace('.', '_') + '.png')
 
     # Add it with a drop-down button
     markdown_content += f'  | [{playlist["name"]}]({image}) | {playlist["id"]} |\n'
