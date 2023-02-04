@@ -50,7 +50,6 @@ drop_down = '<details>\n  <summary>{0}</summary>\n\n{1}</details>\n\n'
 chain = get('https://fortnite-api.com/v2/aes').json()
 
 # Parsing the build version will give us more information about the update
-parsed = parse_build_version(mappings[0]["fileName"])
 
 # Store some information that is obtained from the response
 dynamicKeys = []
