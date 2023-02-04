@@ -61,7 +61,6 @@ dynamicKeys.append(chain["mainKey"])
 
 for package in chain['dynamicKeys']:
     key = package['key']
-    updated = package['updated'}
                
     dynamicKeys.append(key)
 
