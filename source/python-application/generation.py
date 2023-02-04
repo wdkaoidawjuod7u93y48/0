@@ -45,7 +45,7 @@ drop_down = '<details>\n  <summary>{0}</summary>\n\n{1}</details>\n\n'
 # NOTE: Request keys, sort the keys and store them at a later use
 # NOTE: {
 
-mappings = get('https://fortnitecentral.gmatrixgames.ga/api/v1/mappings').json()
+
 
 chain = get('https://fortnite-api.com/v2/aes').json()
 
@@ -61,7 +61,8 @@ dynamicKeys.append(chain["mainKey"])
 
 for package in chain['dynamicKeys']:
     key = package['key']
-
+    updated = package['updated'}
+               
     dynamicKeys.append(key)
 
     # Add each scale-able content of the package
@@ -115,7 +116,7 @@ for manifest in manifests:
 # NOTE: {
 
 # This adds in the thumbnail (scale-able file) into the mark-down file
-markdown_content = f'<div style="pointer-events: none">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155">\n<div>' + f'\n\n## Statistics\n> *{mappings[0]["fileName"].split("_")[0]}*\n\n> {datetime.now()} | {updated_at}\n'
+markdown_content = f'<div style="pointer-events: none">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/wdkaoidawjuod7u93y48/0/master/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155">\n<div>' + f'\n\n## Statistics\n> *{mappings[0]["fileName"].split("_")[0]}*\n\n> {datetime.now()} | {updated_at}\n'
 
 # NOTE: Here we get the playlists and get the ones
 playlists = get('https://fortnite-api.com/v1/playlists').json()['data']
