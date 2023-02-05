@@ -47,27 +47,10 @@ drop_down = '<details>\n  <summary>{0}</summary>\n\n{1}</details>\n\n'
 
 
 
-chain = get('https://fortnite-api.com/v2/aes').json()
-
-# Parsing the build version will give us more information about the update
-
-# Store some information that is obtained from the response
-dynamicKeys = []
-
-# NOTE: Since the dynamicKeys array doesn't include the main key, so we have to add it manually
-markdown_keys += f'> {chain["mainKey"]}\n\n'
-dynamicKeys.append(chain["mainKey"])
-
-for package in chain['dynamicKeys']:
-    key = package['key']
-               
-    dynamicKeys.append(key)
 
     # Add each scale-able content of the package
-    pak_content = add_pak_content(int(package['name'].split('-')[0].replace('optional', '').replace('pakchunk', '')))
 
     # The pak-content in a string used for the listing inside of the drop-down
-    markdown_content = '  '
     
     for content in pak_content:
         markdown_content += f'<img src="https://raw.githubusercontent.com/wdkaoidawjuod7u93y48/0/master/source/dependents/referred/{content}.svg" width="100"> '
